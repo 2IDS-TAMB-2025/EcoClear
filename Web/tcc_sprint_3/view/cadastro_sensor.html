@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Cadastro Sensor</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+                background-color: #f4f4f4;
+                color: #333;
+            }
+            h1 {
+                text-align: center;
+                margin-bottom: 30px;
+            }
+            form {
+                margin-bottom: 20px;
+                text-align: center;
+            }
+            form label {
+                display: block;
+                margin: 10px 0 5px;
+                font-weight: bold;
+            }
+            form input[type="text"] {
+                padding: 8px;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                width: 80%;
+                max-width: 400px;
+                margin-bottom: 15px;
+            }
+            form input[type="submit"] {
+                padding: 8px 15px;
+                background-color: #76a547;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+            form input[type="submit"]:hover {
+                background-color: #5b8a3a;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Cadastro de Sensor</h1>
+        <form action="../controller/controller.php" method="POST">
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome" id="nome" placeholder="Nome..." required>
+            
+            <label for="tipo">Tipo:</label>
+            <input type="text" name="tipo" id="tipo" placeholder="Tipo..." required>
+            
+            <label for="localizacao">Localização:</label>
+            <input type="text" name="localizacao" id="localizacao" placeholder="Localização..." required>
+            
+            <label for="status_sensor">Status do Sensor:</label>
+            <input type="text" name="status_sensor" id="status_sensor" placeholder="Status do Sensor..." required>
+            
+            <label for="unidade">Unidade:</label>
+            <input type="text" name="unidade" id="unidade" placeholder="Unidade..." required>
+
+            <label for="fk_cnpj_empresa">CNPJ:</label>
+            <input type="text" name="fk_cnpj_empresa" id="fk_cnpj_empresa" placeholder="CNPJ..." required>
+            
+            <br><br>
+            <input type="submit" value="Cadastrar!">
+        </form>
+    </body>
+</html>

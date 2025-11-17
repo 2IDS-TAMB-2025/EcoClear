@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+    <link rel="stylesheet" href="cadastra_login.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="shortcut icon" href="img/logo3 (1).png" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <div class="content first-content"> 
+            <div class="first-column">
+                <a href="../view/index.html" class="voltar"><i class="fas fa-arrow-left"></i> Voltar</a>
+                <h2 class="title title-primary">Bem-vindo de volta!</h2>
+                <br/>
+                <p class="description description-primary">Para continuar conectado com nós</p>
+                <p class="description description-primary">Por favor, entrar com suas informações pessoais</p><br/>
+                <button id="signin" class="btn btn-primary">Entrar</button>
+            </div>    
+            <div class="second-column">
+                <h2 class="title title-second">Crie uma conta</h2>
+                <p class="description description-second">Preencha o formulário com as informações da empresa:</p>
+                
+                
+                <form class="form" id="registerForm" action="../controller/controller_empresa.php?tipo_acao=cadastrar" method="post">
+                    <label class="label-input" for="razaoSocial">
+                        <i class="far fa-user icon-modify"></i>
+                        <input type="text" id="razaoSocial" name="razaoSocial" placeholder="Razão Social" required>
+                    </label>
+
+                    <label class="label-input" for="cnpj">
+                        <i class="far fa-user icon-modify"></i>
+                        <input type="text" id="cnpj" name="cnpj" minlength="14" maxlength="14" placeholder="CNPJ" required>
+                    </label>
+                    
+                    <label class="label-input" for="descricaoAtividades">
+                        <i class="far fa-user icon-modify"></i>
+                        <input type="text" id="descricaoAtividades" name="descricaoAtividades" placeholder="Descrição Das Atividades" required>
+                    </label>
+
+                    <label class="label-input" for="email">
+                        <i class="far fa-envelope icon-modify"></i>
+                        <input type="email" id="email" name="email" placeholder="Email" required>
+                    </label>
+
+                    <label class="label-input" for="telefone">
+                        <i class="far fa-user icon-modify"></i>
+                        <input type="tel" id="telefone" name="telefone" minlength="14" maxlength="14" placeholder="Telefone" required>
+                    </label>
+
+                    <label class="label-input" for="endereco">
+                        <i class="far fa-user icon-modify"></i>
+                        <input type="text" id="endereco" name="endereco" placeholder="Endereço" required>
+                    </label>
+                    
+                    <label class="label-input" for="senha">
+                        <i class="fas fa-lock icon-modify"></i>
+                        <input type="password" id="senha" name="senha" minlength="6" maxlength="14" placeholder="Senha" required>
+                    </label>
+
+                    <label class="label-input" for="reSenha">
+                        <i class="fas fa-lock icon-modify"></i>
+                        <input type="password" id="reSenha" name="reSenha" minlength="6" maxlength="14" placeholder="Reconfirmar Senha" required>
+                    </label>
+                    
+                    <button type="submit" class="btn btn-second">Cadastrar</button>       
+                </form>
+            </div><!-- second column -->
+        </div><!-- first content -->
+
+        <div class="content second-content">
+            <div class="first-column">
+                <a href="../view/index.html" class="voltar2"><i class="fas fa-arrow-left"></i> Voltar</a>
+                <h2 class="title title-primary">Olá, Amigo!</h2><br/>
+                <p class="description description-primary">Insira os dados da sua empresa</p>
+                <p class="description description-primary">e comece a jornada conosco!</p><br/>
+                <button id="signup" class="btn btn-primary">Cadastre-se</button>
+            </div>
+            <div class="second-column" style="justify-content: center;">
+                <h2 class="title title-second">Entre na sua conta</h2>
+                <p class="description description-second">Preencha os dados para acessar:</p>
+                <form class="form" id="loginForm" action="../controller/controller_empresa.php?tipo_acao=login" method="post">
+                    <label class="label-input" for="loginCnpj">
+                        <i class="fas fa-lock icon-modify"></i>
+                        <input type="text" id="loginCnpj" name="loginCnpj" minlength="14" maxlength="14" placeholder="CNPJ" required>
+                    </label>
+
+                    <label class="label-input" for="loginSenha">
+                        <i class="far fa-envelope icon-modify"></i>
+                        <input type="password" id="loginSenha" name="loginSenha" placeholder="Senha" required>
+                    </label>
+                
+                    <a class="password" href="esqueceu.html">Esqueceu a senha?</a>
+                    <button type="submit" class="btn btn-second">Entrar</button>
+                </form>
+                <a href="login_adm.html" class="adm"><i class="fa-solid fa-user-tie"></i> Adm</a>
+            </div><!-- second column -->
+        </div><!-- second-content -->
+    </div>
+    <script src="app.js">
+        // Verificar se as senhas coincidem
+        document.getElementById('registerForm').onsubmit = function(e) {
+            var senha = document.getElementById('senha').value;
+            var reSenha = document.getElementById('reSenha').value;
+
+            if (senha !== reSenha) {
+                alert('As senhas não coincidem.');
+                e.preventDefault(); // Impede o envio do formulário
+            }
+        };
+    </script>
+</body>
+</html>

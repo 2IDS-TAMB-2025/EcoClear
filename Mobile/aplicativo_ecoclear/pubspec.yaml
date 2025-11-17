@@ -1,0 +1,29 @@
+name: aplicativo_ecoclear
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.6.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+  fl_chart: ^0.63.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+  url_launcher: ^6.2.1
+  http: ^0.13.5
+  
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/imagens/BioClear.png
+    - assets/imagens/image1.png
+    - assets/imagens/image2.png
+    - assets/imagens/image3.png
+    - assets/imagens/image4.png
