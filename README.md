@@ -1,5 +1,5 @@
 <p align="left">
-  <img src="logo.jpg" alt="EcoClear Logo" width="250" />
+  <img src="./Web/tcc_sprint_3/view/img/logo.png" alt="EcoClear Logo" width="250" />
 </p>
 
 
